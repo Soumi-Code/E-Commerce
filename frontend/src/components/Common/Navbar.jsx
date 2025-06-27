@@ -23,7 +23,7 @@ const Navbar = () => {
       {/* Left - Logo */}
       <div>
         <Link to='/' className='text-2xl font-medium'>
-        SR
+        Trenzia
         </Link>
       </div>
       <div className='hidden md:flex space-x-6'>
