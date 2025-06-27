@@ -89,10 +89,11 @@ const Footer = () => {
                     +91 9830856400
                 </p>
             </div>
+        </div>
             <div className='container mx-auto mt-12 px-4 lg:px-0 border-t border-gray-200 pt-6'>
                 <p className='text-gray-500 text-sm tracking-tighter text-center'>&copy; 2025, CompileTab. All rights reserved.</p>
             </div>
-        </div>
+        
     </footer>
   )
 }
