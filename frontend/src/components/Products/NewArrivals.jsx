@@ -181,7 +181,7 @@ const NewArrivals = () => {
 
       <div 
       ref={scrollRef} 
-      className={`container mx-auto overflow-x-scroll flex space-x-6 relative ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+      className={`container mx-auto overflow-x-scroll flex space-x-6 relative px-4 sm:px-6 lg:px-8 ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUpOrLeave}
@@ -193,7 +193,7 @@ const NewArrivals = () => {
                 alt={product.images[0]?.altText|| product.name} 
                 className='w-full h-[500px] object-cover rounded-lg'
                 draggable="false"/>
-                <div className='absolute bottom-0 left-0 right-0 bg-opacity-50 backdrop-blur-md text-white p-4 rouded-b-lg'>
+                <div className='absolute bottom-0 left-0 right-0 bg-opacity-50 backdrop-blur-md text-white p-4 rounded-b-lg'>
                     <Link to={`/product/${product._id}`} className='block'>
                         <h4 className='font-medium'>{product.name}</h4>
                         <p className='mt-1'>${product.price}</p>
