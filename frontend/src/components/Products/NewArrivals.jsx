@@ -118,10 +118,14 @@ const NewArrivals = () => {
 
 
     const scroll = (direction) => {
-        const scrollAmount = direction === "left" ? -300: 300
-        scrollRef.current.scrollBy({
-            left: scrollAmount, behaviour: "smooth"
-        })
+        const container = scrollRef.current;
+        const childWidth = container?.firstChild?.offsetWidth || 300;
+        const scrollAmount = direction === "left" ? -childWidth : childWidth;
+  
+        container.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth",
+        });
     }
 
 
@@ -137,13 +141,6 @@ const NewArrivals = () => {
             setCanScrollRight(rightScrollable)
         }
 
-
-        console.log({
-            ScrollLeft: container.scrollLeft,
-            clientWidth: container.clientWidth,
-            containerScrollWidth: container.scrollWidth,
-            offsetLeft: scrollRef.current.offsetLeft
-        })
     }
 
     useEffect(() => {
@@ -158,7 +155,7 @@ const NewArrivals = () => {
 
 
   return (
-    <section className='py-16 px-4 lg:px-0'>
+    <section className='py-16 px-4 lg:px-8'>
       <div className='container mx-auto text-center mb-10 relative'>
         <h2 className='text-3xl font-bold mb-4'>Explore New Arrivals</h2>
         <p className='text-lg text-gray-600 mb-8'>Discover the latest trends in fashion and style.</p>
@@ -181,17 +178,17 @@ const NewArrivals = () => {
 
       <div 
       ref={scrollRef} 
-      className={`container mx-auto overflow-x-scroll flex space-x-6 relative ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+      className={`container mx-auto overflow-x-scroll scrollbar-hide flex space-x-6 relative px-4 sm:px-8 ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUpOrLeave}
       onMouseLeave={handleMouseUpOrLeave}>
         {newArrivals.map((product) => (
-            <div key={product._id} className='min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative'>
+            <div key={product._id} className='flex-shrink-0 w-[80%] sm:w-[60%] md:w-[40%] lg:w-[250px] relative'>
                 <img 
                 src={product.images[0]?.url} 
                 alt={product.images[0]?.altText|| product.name} 
-                className='w-full h-[500px] object-cover rounded-lg'
+                className='w-full aspect-[2/3] object-cover rounded-lg'
                 draggable="false"/>
                 <div className='absolute bottom-0 left-0 right-0 bg-opacity-50 backdrop-blur-md text-white p-4 rounded-b-lg'>
                     <Link to={`/product/${product._id}`} className='block'>
