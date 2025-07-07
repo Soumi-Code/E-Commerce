@@ -50,7 +50,7 @@ const CardContents = () => {
                     </div>
                 </div>
                 <div>
-                    <p className='font-medium'>$ {product.price.toLocaleString()}</p>
+                    <p className='font-medium'>Rs {product.price.toLocaleString()}</p>
                     <button>
                         <RiDeleteBin3Line className='text-red-600 h-6 w-6 mt-2' />
                     </button>
