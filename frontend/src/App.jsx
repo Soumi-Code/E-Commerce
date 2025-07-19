@@ -20,12 +20,15 @@ import ProductManagement from './components/Admin/ProductManagement';
 import EditProductPage from './components/Admin/EditProductPage';
 import OrderManagement from './components/Admin/orderManagement';
 
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 
 const App = () => {
   return (
-    <BrowserRouter>
-    <Toaster position="top-right" />
+    <Provider store={store}>
+      <BrowserRouter>
+        <Toaster position="top-right" />
     <Routes>
       <Route path='/' element={<UserLayout/>}> 
       <Route index element={<Home />} />
@@ -47,7 +50,9 @@ const App = () => {
       <Route path="orders"element={<OrderManagement />}/>
       </Route>
     </Routes>
-    </BrowserRouter>  )
+    </BrowserRouter> 
+    </Provider>
+    )
 }
 
 export default App
