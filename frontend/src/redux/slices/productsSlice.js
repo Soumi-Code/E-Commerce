@@ -53,7 +53,7 @@ export const updatedProduct = createAsyncThunk(
         const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/products/${id}`, productData,
             {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem('usertoken')}`
+                    Authorization: `Bearer ${localStorage.getItem('userToken')}`
                 }
             }
         );
