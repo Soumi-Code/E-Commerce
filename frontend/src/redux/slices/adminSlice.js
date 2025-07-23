@@ -9,7 +9,7 @@ export const fetchUsers = createAsyncThunk("admin/fetchUsers", async () => {
         Authorization: `Bearer ${localStorage.getItem("userToken")}`
       }}
   );
-  response.data;
+  return response.data;
 });
 
 // Add the create user action
@@ -34,7 +34,7 @@ export const updateUser = createAsyncThunk("admin/updateUser", async ({ id, name
         Authorization: `Bearer ${localStorage.getItem("userToken")}`
       }
     });
-    response.data;
+    return response.data.user;
 });
 
 // Delete user

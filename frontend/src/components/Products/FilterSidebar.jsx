@@ -213,8 +213,8 @@ const FilterSidebar = () => {
             onChange={handlePriceChange}
             className='w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer' />
             <div className='flex justify-between text-gray-600 mt-2'>
-                <span>Rs 0</span>
-                <span>Rs {priceRange[1]}</span>
+                <span>$ 0</span>
+                <span>$ {priceRange[1]}</span>
             </div>
         </div>
     </div>

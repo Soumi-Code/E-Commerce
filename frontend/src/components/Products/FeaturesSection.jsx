@@ -12,7 +12,7 @@ const FeaturesSection = () => {
                     <HiShoppingBag className='text-xl' />
                 </div>
                 <h4 className='tracking-tighter mb-2'>FREE INTERNATIONAL SHIPPING</h4>
-                <p className='text-gray-600 text-sm tracking-tighter'>On all orders over Rs1000</p>
+                <p className='text-gray-600 text-sm tracking-tighter'>On all orders over $100</p>
             </div>
             {/* Feature 2 */}
             <div className='flex flex-col items-center'>

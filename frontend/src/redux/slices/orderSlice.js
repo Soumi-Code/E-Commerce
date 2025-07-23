@@ -6,7 +6,7 @@ export const fetchUserOrders = createAsyncThunk(
     'order/fetchUserOrders',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/orders`, {
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/orders/my-orders`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('userToken')}`,
                 },
@@ -22,7 +22,7 @@ export const fetchUserOrders = createAsyncThunk(
 // async thunk to fetch orders by ID
 export const fetchOrderDetails = createAsyncThunk(
     'order/fetchOrderDetails',
-    async (fetchOrderDetails, { rejectWithValue }) => {
+    async (orderId, { rejectWithValue }) => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/orders/${orderId}`, {
                 headers: {
@@ -76,6 +76,5 @@ const orderSlice = createSlice({
     },
 });
 
-export const { resetOrders } = orderSlice.actions;
 
 export default orderSlice.reducer;

@@ -14,7 +14,7 @@ const OrderConfirmationPage = () => {
             dispatch(clearCart())
             localStorage.removeItem("cart")
         } else {
-            navigate("/my-order")
+            navigate("/order/id")
         }
     },[checkout, dispatch, navigate])
 
@@ -60,7 +60,7 @@ const OrderConfirmationPage = () => {
                             <p className='text-sm text-gray-500'>{item.color} | {item.size} </p>
                         </div>
                         <div className='ml-auto text-right'>
-                            <p className='text-md'>Rs {item.price}</p>
+                            <p className='text-md'>$ {item.price}</p>
                             <p className='text-sm text-gray-500'>Qty: {item.quantity}</p>
                         </div>
                     </div>

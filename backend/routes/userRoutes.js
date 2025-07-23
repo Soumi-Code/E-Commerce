@@ -21,7 +21,7 @@ router.post('/register',async (req,res) => {
         user = new User({ name, email, password })
         await user.save()
 
-        const payload = { user: { id: user._id, role: user.role } }
+        const payload = { id: user._id, role: user.role }
 
         //Sign and return the token along with user data
         jwt.sign(payload, process.env.JWT_SECRET, (err,token) => {
@@ -60,7 +60,7 @@ router.post("/login", async (req, res) => {
         if (!isMatch)
             return res.status(400).json({ message: "Invalid Credentials"})
 
-        const payload = { user: { id: user._id, role: user.role } }
+        const payload = { id: user._id, role: user.role }
 
         //Sign and return the token along with user data
         jwt.sign(payload, process.env.JWT_SECRET, (err,token) => {
