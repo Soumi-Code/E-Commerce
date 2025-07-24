@@ -28,6 +28,7 @@ router.put('/:id', protect, admin, async (req, res) => {
             order.isDelivered = req.body.status === 'delivered' ? true : order.isDelivered;
             order.deliveredAt = req.body.status === 'delivered' ? Date.now() : order.deliveredAt;
             const updatedOrder = await order.save();
+            await updatedOrder.populate('user','name email')
             res.json({ message: 'Order updated successfully', order: updatedOrder });
         } else {
             res.status(404).json({ message: 'Order not found' });

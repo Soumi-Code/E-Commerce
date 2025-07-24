@@ -7,7 +7,7 @@ const NewArrivals = () => {
     const scrollRef = useRef(null)
     const [isDragging, setIsDragging] = useState(false)
     const [startX, setStartX] = useState(0)
-    const [ScrollLeft, setScrollLeft] = useState(false)
+    const [scrollLeft, setScrollLeft] = useState(0)
     const [canScrollLeft, setCanScrollLeft] = useState(false)
     const [canScrollRight, setCanScrollRight] = useState(true)
 
@@ -110,19 +110,23 @@ const NewArrivals = () => {
       onMouseUp={handleMouseUpOrLeave}
       onMouseLeave={handleMouseUpOrLeave}>
         {newArrivals.map((product) => (
-            <div key={product._id} className='flex-shrink-0 w-[80%] sm:w-[60%] md:w-[40%] lg:w-[250px] relative'>
-                <img 
+            <Link 
+            to={`/product/${product._id}`} 
+            key={product._id} 
+            className='flex-shrink-0 w-[80%] sm:w-[60%] md:w-[40%] lg:w-[250px] relative hover:shadow-lg transition duration-200 transform hover:scale-105'
+            >
+            <img 
                 src={product.images[0]?.url} 
-                alt={product.images[0]?.altText|| product.name} 
+                alt={product.images[0]?.altText || product.name} 
                 className='w-full aspect-[2/3] object-cover rounded-lg'
-                draggable="false"/>
-                <div className='absolute bottom-0 left-0 right-0 bg-opacity-50 backdrop-blur-md text-white p-4 rounded-b-lg'>
-                    <Link to={`/product/${product._id}`} className='block'>
-                        <h4 className='font-medium'>{product.name}</h4>
-                        <p className='mt-1'>$ {product.price}</p>
-                    </Link>
-                </div>
+                draggable="false"
+            />
+            <div className='absolute bottom-0 left-0 right-0 bg-opacity-50 backdrop-blur-md text-white p-4 rounded-b-lg'>
+                <h4 className='font-medium'>{product.name}</h4>
+                <p className='mt-1'>$ {product.price}</p>
             </div>
+            </Link>
+
 
         ))}
       </div>

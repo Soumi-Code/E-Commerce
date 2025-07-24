@@ -27,7 +27,7 @@ const ProductDetails = ({ productId }) => {
     }, [dispatch, productFetchId])
 
     useEffect(() => {
-        if (selectedProduct?.images?.length > 0) {
+        if (selectedProduct?.images?.length > 0 && selectedProduct.images[0].url) {
             setMainImage(selectedProduct.images[0].url)
         }
     }, [selectedProduct])
