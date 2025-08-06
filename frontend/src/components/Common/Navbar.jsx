@@ -41,7 +41,7 @@ const Navbar = () => {
         <Link to='/collections/all?category=Top Wear' className='text-gray-700 hover:text-black text-sm font-medium uppercase'>
         Top Wear
         </Link>
-        <Link to='/collections/all?category=Bottom wear' className='text-gray-700 hover:text-black text-sm font-medium uppercase'>
+        <Link to='/collections/all?category=Bottom Wear' className='text-gray-700 hover:text-black text-sm font-medium uppercase'>
         Bottom Wear
         </Link>
       </div>
