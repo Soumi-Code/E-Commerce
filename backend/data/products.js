@@ -807,7 +807,7 @@ const products = [
 		colors: ["Black", "White", "Gray"],
 		collections: "Essentials",
 		material: "Cotton",
-		gender: "Women",
+		gender: "Men",
 		images: [
 			{
 				url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQgFvnH_oVm4P4FiJRliHqy49vebmeIRtDI8m8XEhoGxtxAMliRhKwCeBAOkHahZOs8MLR1piipynXkQqq2FqpG7WGx25FRDuDLVe-0auQ",
