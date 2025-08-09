@@ -76,3 +76,5 @@ npm run dev    # Start the frontend development server
 The frontend will be available at [http://localhost:5173](http://localhost:5173) and the backend API at [http://localhost:3000](http://localhost:3000) by default.
 
 ---
+## Check out the website
+https://trenzia-e-commerce.vercel.app/
