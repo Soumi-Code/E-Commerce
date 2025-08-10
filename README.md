@@ -27,7 +27,7 @@ Our vision is to create a scalable, user-friendly, and visually appealing online
 
 ## Project Status
 
-The project is currently in active development. Core features such as user registration/login, product catalog, cart, checkout, and admin management are implemented. Further enhancements, UI polish, and additional features (like payment integration and advanced analytics) are planned.
+The project is currently in active development. Core features such as user registration/login, product catalog, cart, checkout, and admin management are implemented. Further enhancements, UI polish, and additional features are planned.
 
 ## Features & Outcome
 
@@ -49,8 +49,8 @@ The project is currently in active development. Core features such as user regis
 ### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/yourusername/trenzia-ecommerce.git
-cd trenzia-ecommerce
+git clone https://github.com/Soumi-Code/Trenzia.git
+cd Trenzia
 ```
 
 ### 2. Setup the Backend
@@ -73,7 +73,7 @@ npm install
 npm run dev    # Start the frontend development server
 ```
 
-The frontend will be available at [http://localhost:5173](http://localhost:5173) and the backend API at [http://localhost:3000](http://localhost:3000) by default.
+The frontend will be available at [http://localhost:5173]and the backend API at [http://localhost:3000] by default.
 
 ---
 ## Check out the website
